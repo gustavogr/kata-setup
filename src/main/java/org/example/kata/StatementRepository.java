@@ -1,15 +1,18 @@
 package org.example.kata;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StatementRepository {
 
 
+    private final List<Statement> statements = new ArrayList<>();
+
     public void save(Statement statement) {
-        throw new RuntimeException("Not implemented");
+        this.statements.add(statement);
     }
 
     public List<Statement> getStatements() {
-        throw new RuntimeException("Not implemented");
+        return statements;
     }
 }
