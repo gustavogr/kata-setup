@@ -1,11 +1,10 @@
 package org.example.kata;
 
 
-import java.io.PrintStream;
 import java.util.List;
 
 public class Account {
-    private StatementRepository statementRepository;
+    private final StatementRepository statementRepository = new StatementRepository();
     private StatementPrinter statementPrinter;
 
     public void deposit(int amount) {
@@ -22,4 +21,5 @@ public class Account {
         List<Statement> statements = statementRepository.getStatements();
         statementPrinter.print(statements);
     }
+
 }
