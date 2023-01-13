@@ -1,12 +1,30 @@
-package org.example;
+package org.example.kata;
 
+import org.example.kata.Account;
+import org.example.kata.MyConsole;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
+import org.mockito.Mock;
+
+import static org.mockito.Mockito.inOrder;
+import static org.mockito.Mockito.mock;
 
 public class AccountTest {
+
+    private Account account = new Account();
+
+    @Mock
+    private MyConsole console;
+
+    @BeforeEach
+    void setUp() {
+        account = new Account();
+        console = mock(MyConsole.class);
+    }
+
     @Test
     void itShouldWorks() {
-        Account account = new Account();
         account.deposit(1000);
         account.deposit(2000);
         account.withdraw(500);
